@@ -3,3 +3,4 @@
 <h3>Aula Prática - Projeto Escola</h3>
 
 - v0.0: Iniciando os Estudos com Modificadores Public e Private 
+- v1.0: Inserindo os Métodos Gets and Sets
