@@ -1,20 +1,41 @@
 package classes;
 
+import classes.Disciplina;
+
+
 public class Aluno {
 
 	private String nome;
 	private int idade;
+	private String dataNasc;
 	
-	/*private String dataNasc;
-	private double nota1;
-	private double nota2;
-	private double nota3;
-	/*private double nota4;*/
+	private Disciplina disciplina = new Disciplina();
+	
+	
+	
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
 	
 	public Aluno() {
 
 	}
 	
+
+	public String getDataNasc() {
+		return dataNasc;
+	}
+
+	public void setDataNasc(String dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -34,31 +55,35 @@ public class Aluno {
 
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idade;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		return result;
+	public String toString() {
+		return "AlunoMedia [nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", disciplina=" + disciplina
+				+ "]";
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	/* Metodo que retorna a média do aluno */
+	public double getMediaNota() {
+		return (disciplina.getNota1() + disciplina.getNota2() 
+		+ disciplina.getNota3() + disciplina.getNota4()) / 4;
+	}
+
+	
+	/* Metodo que retorna true para Aprovado e false para Reprovado */
+	public boolean getAlunoAprovado() {
+		double media = this.getMediaNota();
+		if (media >=70) {
 			return true;
-		if (obj == null)
+		}else {
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Aluno other = (Aluno) obj;
-		if (idade != other.idade)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		return true;
+		}
+	}
+
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		if (media >= 70) {
+			return "Aluno está Aprovado";
+		} else {
+			return "Aluno está Reprovado";
+		}
 	}
 
 }
