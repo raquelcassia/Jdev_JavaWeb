@@ -4,14 +4,26 @@ public class Aluno {
 
 	private String nome;
 	private int idade;
+	private String dataNasc;
 	private double nota1;
 	private double nota2;
 	private double nota3;
 	private double nota4;
 
+	
 	public Aluno() {
 
 	}
+	
+	public String getDataNasc() {
+		return dataNasc;
+	}
+
+	public void setDataNasc(String dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -84,6 +96,8 @@ public class Aluno {
 			return "Aluno está Reprovado";
 		}
 	}
+
+	
 
 }
 
