@@ -8,3 +8,4 @@
 		retornando se eles estão aprovados ou reprovados.
 - v3.0: Entrada de Dados utilizando o Dialog 
 - v4.0: Conhecendo o ToString 
+- v5.0: Conhecendo Equals e Hash
