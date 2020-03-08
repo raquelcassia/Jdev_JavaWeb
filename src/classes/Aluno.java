@@ -97,7 +97,9 @@ public class Aluno {
 		}
 	}
 
-	
-
+	@Override
+	public String toString() {
+		return "AlunoMedia [nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", nota1=" + nota1
+				+ ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4 + "]";
+	}
 }
-
