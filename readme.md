@@ -10,3 +10,4 @@
 - v4.0: Conhecendo o ToString 
 - v5.0: Conhecendo Equals e Hash
 - v6.0: Implementando o Atributo Disciplina 
+- v7.0: Percorrendo Listas 

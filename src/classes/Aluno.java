@@ -1,7 +1,7 @@
 package classes;
 
-import classes.Disciplina;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno {
 
@@ -9,19 +9,20 @@ public class Aluno {
 	private int idade;
 	private String dataNasc;
 	
-	private Disciplina disciplina = new Disciplina();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	
-	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
-	
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
+
 	public Aluno() {
 
 	}
@@ -45,6 +46,8 @@ public class Aluno {
 		this.nome = nome;
 	}
 
+
+
 	public int getIdade() {
 		return idade;
 	}
@@ -53,17 +56,20 @@ public class Aluno {
 		this.idade = idade;
 	}
 
-
-	@Override
 	public String toString() {
-		return "AlunoMedia [nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", disciplina=" + disciplina
-				+ "]";
+		return "AlunoMedia [nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + "]";
 	}
 
 	/* Metodo que retorna a média do aluno */
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2() 
-		+ disciplina.getNota3() + disciplina.getNota4()) / 4;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas / disciplinas.size(); /*retorna qnts objts tem na lista*/
 	}
 
 	
@@ -84,6 +90,11 @@ public class Aluno {
 		} else {
 			return "Aluno está Reprovado";
 		}
+	}
+
+	public void setIdade(Integer valueOf) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
