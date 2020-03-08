@@ -4,3 +4,6 @@
 
 - v0.0: Iniciando os Estudos com Modificadores Public e Private 
 - v1.0: Inserindo os Métodos Gets and Sets
+- v2.0: Calculando a média dos alunos, inserindo a nota diretament no código e
+		retornando se eles estão aprovados ou reprovados.
+
